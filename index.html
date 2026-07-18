@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MGifts — Corporate Gifting & Custom Giveaways</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #1B2A38;
+            line-height: 1.6;
+            background: #FAFAF7;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        /* Header / Nav */
+        header {
+            background: #163A5C;
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: bold;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-mark {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-mark img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .tagline {
+            color: #F0C878;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #163A5C;
+            color: white;
+            padding: 80px 24px;
+            text-align: center;
+        }
+
+        .hero-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-logo {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #E7DFCE;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .cta-email {
+            display: inline-block;
+            background: #E8A93B;
+            color: #163A5C;
+            padding: 16px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(232, 169, 59, 0.3);
+        }
+
+        .cta-email:hover {
+            background: #F0C878;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(232, 169, 59, 0.4);
+        }
+
+        /* Product Tiers Section */
+        .tiers {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 24px;
+        }
+
+        .tiers h2 {
+            text-align: center;
+            font-size: 36px;
+            color: #163A5C;
+            margin-bottom: 60px;
+            font-weight: 700;
+        }
+
+        .tier-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .tier-card {
+            background: white;
+            border-radius: 12px;
+            padding: 32px 24px;
+            text-align: center;
+            border-left: 4px solid #E8A93B;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .tier-card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            transform: translateY(-4px);
+        }
+
+        .tier-card h3 {
+            font-size: 20px;
+            color: #163A5C;
+            margin-bottom: 8px;
+        }
+
+        .tier-badge {
+            display: inline-block;
+            background: #E7DFCE;
+            color: #163A5C;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .tier-card p {
+            color: #6B7480;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .tier-price {
+            font-size: 18px;
+            font-weight: 700;
+            color: #E8A93B;
+        }
+
+        /* Contact Form Section */
+        .contact-section {
+            background: white;
+            padding: 60px 24px;
+        }
+
+        .contact-inner {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-section h2 {
+            text-align: center;
+            font-size: 32px;
+            color: #163A5C;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .contact-section > p {
+            text-align: center;
+            color: #6B7480;
+            margin-bottom: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #163A5C;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #D9D2C2;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 14px;
+            color: #1B2A38;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #E8A93B;
+            box-shadow: 0 0 0 3px rgba(232, 169, 59, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-submit {
+            background: #163A5C;
+            color: white;
+            padding: 14px 32px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .form-submit:hover {
+            background: #0F2A44;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(22, 58, 92, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #163A5C;
+            color: #E7DFCE;
+            padding: 40px 24px;
+            text-align: center;
+            border-top: 1px solid #0F2A44;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #F0C878;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #FFFFFF;
+        }
+
+        .footer-divider {
+            width: 40px;
+            height: 1px;
+            background: #E8A93B;
+            margin: 0 auto 16px;
+        }
+
+        .footer-credit {
+            font-size: 13px;
+            color: #F0C878;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .tiers h2 {
+                font-size: 28px;
+            }
+
+            .tier-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-section h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-inner">
+            <div class="logo-text">
+                <div class="logo-mark"><img src="assets/images/logo-mark.png" alt="MGifts Mark"></div>
+                <div>
+                    <div>MGifts</div>
+                    <div class="tagline">Corporate Gifting</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-logo">
+                <img src="assets/images/logo-main.png" alt="MGifts Logo">
+            </div>
+            <h1>MGifts</h1>
+            <p>Corporate gifting that scales with you.</p>
+            <a href="#contact" class="cta-email">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Product Tiers -->
+    <section class="tiers">
+        <h2>Our Offerings</h2>
+        <div class="tier-grid">
+            <div class="tier-card">
+                <div class="tier-badge">Entry Level</div>
+                <h3>Student & Small Kits</h3>
+                <p>Budget-friendly giveaways for events, workshops, and student promotions. Curated boxes starting at low minimums.</p>
+                <div class="tier-price">₱50–300/set</div>
+            </div>
+
+            <div class="tier-card">
+                <div class="tier-badge">Standard</div>
+                <h3>Corporate Giveaways</h3>
+                <p>Custom branded boxes with drinkware, tech, or apparel. Perfect for team gifts, client appreciation, and events.</p>
+                <div class="tier-price">₱300–1.2k/set</div>
+            </div>
+
+            <div class="tier-card">
+                <div class="tier-badge">Premium</div>
+                <h3>Org Kits (₱3k MOQ)</h3>
+                <p>Curated experiences for organizations. Premium gift sets with personalization, inserts, and branded packaging.</p>
+                <div class="tier-price">₱1.2k–3k/set</div>
+            </div>
+
+            <div class="tier-card">
+                <div class="tier-badge">Luxury</div>
+                <h3>High Ticket Gifts</h3>
+                <p>Executive-grade gifts for C-suite, board members, and VIP clients. Premium materials, custom finishes, bespoke design.</p>
+                <div class="tier-price">₱3k+/set</div>
+            </div>
+
+            <div class="tier-card">
+                <div class="tier-badge">Bespoke</div>
+                <h3>Custom Plaques & Recognition</h3>
+                <p>Personalized awards, recognition plaques, and custom trophies. Engraving, foil, and premium materials available.</p>
+                <div class="tier-price">Quote on Request</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-inner">
+            <h2>Get Started Today</h2>
+            <p>Tell us about your gifting needs. We'll be in touch shortly.</p>
+
+            <div id="form-message" style="display: none; padding: 16px; margin-bottom: 20px; border-radius: 6px; text-align: center; font-weight: 500;"></div>
+
+            <form id="contactForm" name="contact">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" id="company" name="company">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Tell us about your gifting needs *</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+
+                <button type="submit" class="form-submit" id="submitBtn">Send Inquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="https://www.facebook.com/MGiftsPh" target="_blank">Facebook</a>
+                <span>·</span>
+                <a href="mailto:mgiftsph@gmail.com">Contact</a>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-credit">
+                <p>MGifts — Corporate Gifting & Custom Giveaways</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const form = document.getElementById('contactForm');
+        const messageDiv = document.getElementById('form-message');
+        const submitBtn = document.getElementById('submitBtn');
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                company: document.getElementById('company').value,
+                message: document.getElementById('message').value
+            };
+
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            messageDiv.style.display = 'none';
+
+            try {
+                // MGifts Google Apps Script deployment URL (hardcoded)
+                const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz3XmLFfkfNR8xLXwQOmKx1uG-KIQWSzXN7EFcAghLJmslntVmVLKqGYQMyE2_Tu_bQ/exec';
+
+                const response = await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json();
+
+                if (result.status === 'success') {
+                    // Show success message
+                    messageDiv.style.backgroundColor = '#D4EDDA';
+                    messageDiv.style.color = '#155724';
+                    messageDiv.textContent = '✓ Thank you! We received your inquiry. We\'ll be in touch within 24 hours.';
+                    messageDiv.style.display = 'block';
+
+                    // Reset form
+                    form.reset();
+                    submitBtn.textContent = 'Send Inquiry';
+                    submitBtn.disabled = false;
+
+                    // Clear message after 5 seconds
+                    setTimeout(() => {
+                        messageDiv.style.display = 'none';
+                    }, 5000);
+                } else {
+                    throw new Error(result.message || 'Submission failed');
+                }
+            } catch (error) {
+                // Show error message
+                messageDiv.style.backgroundColor = '#F8D7DA';
+                messageDiv.style.color = '#721C24';
+                messageDiv.textContent = '✗ ' + error.message + ' Please try emailing us at mgiftsph@gmail.com';
+                messageDiv.style.display = 'block';
+
+                submitBtn.textContent = 'Send Inquiry';
+                submitBtn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>

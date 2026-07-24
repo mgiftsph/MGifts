@@ -3,7 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MGifts — Corporate Gifting & Custom Giveaways</title>
+    <title>Corporate Gifting & Custom Giveaways in Makati, Metro Manila | MGifts</title>
+    <meta name="description" content="MGifts creates custom corporate gifts and branded giveaways in Metro Manila — from student kits to executive gift sets. Based in Makati City, serving clients nationwide across the Philippines.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="MGifts — Corporate Gifting & Custom Giveaways">
+    <meta property="og:description" content="Custom branded gift sets for teams, clients, and events. Based in Makati City, serving clients across the Philippines.">
+    <meta property="og:image" content="https://mgifts.borbon.cc/assets/images/logo-main.png">
+    <meta property="og:url" content="https://mgifts.borbon.cc/">
+    <meta property="og:type" content="website">
+
+    <!-- LocalBusiness structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "MGifts",
+      "image": "https://mgifts.borbon.cc/assets/images/logo-main.png",
+      "telephone": "+639524690228",
+      "email": "mgiftsph@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Unit 812 The Lerato, Malugay Street, Bel-Air",
+        "addressLocality": "Makati City",
+        "postalCode": "1209",
+        "addressCountry": "PH"
+      },
+      "url": "https://mgifts.borbon.cc/",
+      "priceRange": "P50-P3000+"
+    }
+    </script>
+
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -23,7 +53,6 @@
             font-family: 'Playfair Display', Georgia, serif;
         }
 
-        /* Header / Nav */
         header {
             background: #163A5C;
             padding: 16px 0;
@@ -72,7 +101,27 @@
             letter-spacing: 0.5px;
         }
 
-     /* Hero Section */
+        .header-contact {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .header-contact a {
+            color: #F0C878;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.3s ease;
+        }
+
+        .header-contact a:hover {
+            color: #FFFFFF;
+        }
+
         .hero {
             background-image: url('assets/images/hero-banner.png');
             background-size: cover;
@@ -90,7 +139,8 @@
             max-width: 800px;
             margin: 0 auto;
         }
-.hero-logo {
+
+        .hero-logo {
             width: 160px;
             height: 160px;
             margin: 0 auto 32px;
@@ -124,6 +174,13 @@
             font-weight: 300;
         }
 
+        .cta-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
         .cta-email {
             display: inline-block;
             background: #E8A93B;
@@ -143,7 +200,25 @@
             box-shadow: 0 6px 16px rgba(232, 169, 59, 0.4);
         }
 
-        /* Product Tiers Section */
+        .cta-secondary {
+            display: inline-block;
+            background: transparent;
+            color: #FFFFFF;
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            transition: all 0.3s ease;
+        }
+
+        .cta-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #FFFFFF;
+            transform: translateY(-2px);
+        }
+
         .tiers {
             max-width: 1200px;
             margin: 80px auto;
@@ -172,6 +247,8 @@
             border-left: 4px solid #E8A93B;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
             transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
 
         .tier-card:hover {
@@ -201,22 +278,40 @@
             font-size: 14px;
             line-height: 1.8;
             margin-bottom: 20px;
+            flex-grow: 1;
         }
 
         .tier-price {
             font-size: 18px;
             font-weight: 700;
             color: #E8A93B;
+            margin-bottom: 20px;
         }
 
-        /* Contact Form Section */
+        .tier-cta {
+            display: inline-block;
+            color: #163A5C;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            border: 1px solid #163A5C;
+            padding: 10px 20px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .tier-cta:hover {
+            background: #163A5C;
+            color: #FFFFFF;
+        }
+
         .contact-section {
             background: white;
             padding: 60px 24px;
         }
 
         .contact-inner {
-            max-width: 600px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
@@ -232,6 +327,13 @@
             text-align: center;
             color: #6B7480;
             margin-bottom: 40px;
+        }
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 48px;
+            align-items: start;
         }
 
         .form-group {
@@ -289,7 +391,82 @@
             box-shadow: 0 4px 12px rgba(22, 58, 92, 0.3);
         }
 
-        /* Footer */
+        .form-note {
+            text-align: center;
+            font-size: 13px;
+            color: #6B7480;
+            margin-top: 12px;
+        }
+
+        .contact-details {
+            background: #FAFAF7;
+            border-radius: 12px;
+            padding: 28px 24px;
+            border-left: 4px solid #E8A93B;
+        }
+
+        .contact-details h3 {
+            font-size: 16px;
+            color: #163A5C;
+            margin-bottom: 16px;
+        }
+
+        .contact-details p {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 14px;
+            color: #1B2A38;
+            margin-bottom: 14px;
+        }
+
+        .contact-details a {
+            color: #1B2A38;
+            text-decoration: none;
+        }
+
+        .contact-details a:hover {
+            color: #E8A93B;
+        }
+
+        .quick-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .quick-actions a {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .quick-actions .viber-btn {
+            background: #7360F2;
+            color: #FFFFFF;
+        }
+
+        .quick-actions .viber-btn:hover {
+            background: #5E4DD1;
+        }
+
+        .quick-actions .call-btn {
+            background: #FFFFFF;
+            color: #163A5C;
+            border: 1px solid #163A5C;
+        }
+
+        .quick-actions .call-btn:hover {
+            background: #163A5C;
+            color: #FFFFFF;
+        }
+
         footer {
             background: #163A5C;
             color: #E7DFCE;
@@ -334,7 +511,12 @@
             color: #F0C878;
         }
 
-        /* Responsive */
+        .footer-address {
+            font-size: 13px;
+            color: #E7DFCE;
+            margin-bottom: 16px;
+        }
+
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 32px;
@@ -355,36 +537,48 @@
             .contact-section h2 {
                 font-size: 24px;
             }
+
+            .contact-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .header-contact {
+                display: none;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="header-inner">
             <div class="logo-text">
-                <div class="logo-mark"><img src="assets/images/logo-mark.png" alt="MGifts Mark"></div>
+                <div class="logo-mark"><img src="assets/images/logo-mark.png" alt="MGifts corporate gifting logo mark, Makati City"></div>
                 <div>
                     <div>MGifts</div>
                     <div class="tagline">Corporate Gifting</div>
                 </div>
             </div>
+            <div class="header-contact">
+                <a href="tel:+639524690228">Call/Text 0952 469 0228</a>
+                <a href="mailto:mgiftsph@gmail.com">Email Us</a>
+            </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-inner">
             <div class="hero-logo">
-                <img src="assets/images/logo-main.png" alt="MGifts Logo">
+                <img src="assets/images/logo-main.png" alt="MGifts corporate gifting and custom giveaways, Makati City Philippines">
             </div>
             <h1>MGifts</h1>
-            <p>Corporate gifting that scales with you.</p>
-            <a href="#contact" class="cta-email">Get Started</a>
+            <p>Corporate gifting that scales with you — based in Makati, serving clients across the Philippines.</p>
+            <div class="cta-group">
+                <a href="#contact" class="cta-email">Get Started</a>
+                <a href="viber://chat?number=%2B639524690228" class="cta-secondary">Chat on Viber</a>
+            </div>
         </div>
     </section>
 
-    <!-- Product Tiers -->
     <section class="tiers">
         <h2>Our Offerings</h2>
         <div class="tier-grid">
@@ -392,28 +586,32 @@
                 <div class="tier-badge">Entry Level</div>
                 <h3>Student & Small Kits</h3>
                 <p>Budget-friendly giveaways for events, workshops, and student promotions. Curated boxes starting at low minimums.</p>
-                <div class="tier-price">₱50–300/set</div>
+                <div class="tier-price">P50-P300/set</div>
+                <a href="#contact" class="tier-cta" data-tier="Student & Small Kits">Request a Quote &rarr;</a>
             </div>
 
             <div class="tier-card">
                 <div class="tier-badge">Standard</div>
                 <h3>Corporate Giveaways</h3>
                 <p>Custom branded boxes with drinkware, tech, or apparel. Perfect for team gifts, client appreciation, and events.</p>
-                <div class="tier-price">₱300–1.2k/set</div>
+                <div class="tier-price">P300-P1.2k/set</div>
+                <a href="#contact" class="tier-cta" data-tier="Corporate Giveaways">Request a Quote &rarr;</a>
             </div>
 
             <div class="tier-card">
                 <div class="tier-badge">Premium</div>
-                <h3>Org Kits (₱3k MOQ)</h3>
+                <h3>Org Kits (P3k MOQ)</h3>
                 <p>Curated experiences for organizations. Premium gift sets with personalization, inserts, and branded packaging.</p>
-                <div class="tier-price">₱1.2k–3k/set</div>
+                <div class="tier-price">P1.2k-P3k/set</div>
+                <a href="#contact" class="tier-cta" data-tier="Org Kits">Request a Quote &rarr;</a>
             </div>
 
             <div class="tier-card">
                 <div class="tier-badge">Luxury</div>
                 <h3>High Ticket Gifts</h3>
                 <p>Executive-grade gifts for C-suite, board members, and VIP clients. Premium materials, custom finishes, bespoke design.</p>
-                <div class="tier-price">₱3k+/set</div>
+                <div class="tier-price">P3k+/set</div>
+                <a href="#contact" class="tier-cta" data-tier="High Ticket Gifts">Request a Quote &rarr;</a>
             </div>
 
             <div class="tier-card">
@@ -421,11 +619,11 @@
                 <h3>Custom Plaques & Recognition</h3>
                 <p>Personalized awards, recognition plaques, and custom trophies. Engraving, foil, and premium materials available.</p>
                 <div class="tier-price">Quote on Request</div>
+                <a href="#contact" class="tier-cta" data-tier="Custom Plaques & Recognition">Request a Quote &rarr;</a>
             </div>
         </div>
     </section>
 
-    <!-- Contact Form Section -->
     <section class="contact-section" id="contact">
         <div class="contact-inner">
             <h2>Get Started Today</h2>
@@ -433,43 +631,65 @@
 
             <div id="form-message" style="display: none; padding: 16px; margin-bottom: 20px; border-radius: 6px; text-align: center; font-weight: 500;"></div>
 
-            <form id="contactForm" name="contact">
-                <div class="form-group">
-                    <label for="name">Name *</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
+            <div class="contact-layout">
+                <form id="contactForm" name="contact">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
 
-                <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
 
-                <div class="form-group">
-                    <label for="company">Company</label>
-                    <input type="text" id="company" name="company">
-                </div>
+                    <div class="form-group">
+                        <label for="phone">Phone (for faster response)</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
 
-                <div class="form-group">
-                    <label for="message">Tell us about your gifting needs *</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
+                    <div class="form-group">
+                        <label for="company">Company</label>
+                        <input type="text" id="company" name="company">
+                    </div>
 
-                <button type="submit" class="form-submit" id="submitBtn">Send Inquiry</button>
-            </form>
+                    <div class="form-group">
+                        <label for="message">Tell us about your gifting needs *</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="form-submit" id="submitBtn">Send Inquiry</button>
+                    <p class="form-note">We typically respond within 24 hours.</p>
+                </form>
+
+                <div class="contact-details">
+                    <h3>Reach us directly</h3>
+                    <p>Phone: <a href="tel:+639524690228">+63 952 469 0228</a></p>
+                    <p>Email: <a href="mailto:mgiftsph@gmail.com">mgiftsph@gmail.com</a></p>
+                    <p>Address: Unit 812 The Lerato, Malugay Street, Bel-Air, Makati City 1209</p>
+
+                    <div class="quick-actions">
+                        <a href="viber://chat?number=%2B639524690228" class="viber-btn">Chat with us on Viber</a>
+                        <a href="tel:+639524690228" class="call-btn">Call / Text Us</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-inner">
             <div class="footer-links">
                 <a href="https://www.facebook.com/MGiftsPh" target="_blank">Facebook</a>
-                <span>·</span>
+                <span>&middot;</span>
                 <a href="mailto:mgiftsph@gmail.com">Contact</a>
+                <span>&middot;</span>
+                <a href="tel:+639524690228">+63 952 469 0228</a>
             </div>
             <div class="footer-divider"></div>
+            <p class="footer-address">Unit 812 The Lerato, Malugay Street, Bel-Air, Makati City 1209, Philippines</p>
             <div class="footer-credit">
-                <p>MGifts — Corporate Gifting & Custom Giveaways</p>
+                <p>MGifts &mdash; Corporate Gifting & Custom Giveaways</p>
             </div>
         </div>
     </footer>
@@ -479,24 +699,32 @@
         const messageDiv = document.getElementById('form-message');
         const submitBtn = document.getElementById('submitBtn');
 
+        document.querySelectorAll('.tier-cta').forEach(function(link) {
+            link.addEventListener('click', function() {
+                const tier = this.getAttribute('data-tier');
+                const messageField = document.getElementById('message');
+                if (messageField && !messageField.value) {
+                    messageField.value = "I'm interested in: " + tier + ". ";
+                }
+            });
+        });
+
         form.addEventListener('submit', async function(e) {
             e.preventDefault();
 
-            // Get form data
             const formData = {
                 name: document.getElementById('name').value,
                 email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
                 company: document.getElementById('company').value,
                 message: document.getElementById('message').value
             };
 
-            // Show loading state
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending...';
             messageDiv.style.display = 'none';
 
             try {
-                // MGifts Google Apps Script deployment URL (hardcoded)
                 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz3XmLFfkfNR8xLXwQOmKx1uG-KIQWSzXN7EFcAghLJmslntVmVLKqGYQMyE2_Tu_bQ/exec';
 
                 const response = await fetch(SCRIPT_URL, {
@@ -507,18 +735,15 @@
                 const result = await response.json();
 
                 if (result.status === 'success') {
-                    // Show success message
                     messageDiv.style.backgroundColor = '#D4EDDA';
                     messageDiv.style.color = '#155724';
-                    messageDiv.textContent = '✓ Thank you! We received your inquiry. We\'ll be in touch within 24 hours.';
+                    messageDiv.textContent = 'Thank you! We received your inquiry. We will be in touch within 24 hours.';
                     messageDiv.style.display = 'block';
 
-                    // Reset form
                     form.reset();
                     submitBtn.textContent = 'Send Inquiry';
                     submitBtn.disabled = false;
 
-                    // Clear message after 5 seconds
                     setTimeout(() => {
                         messageDiv.style.display = 'none';
                     }, 5000);
@@ -526,10 +751,9 @@
                     throw new Error(result.message || 'Submission failed');
                 }
             } catch (error) {
-                // Show error message
                 messageDiv.style.backgroundColor = '#F8D7DA';
                 messageDiv.style.color = '#721C24';
-                messageDiv.textContent = '✗ ' + error.message + ' Please try emailing us at mgiftsph@gmail.com';
+                messageDiv.textContent = error.message + ' Please try emailing us at mgiftsph@gmail.com';
                 messageDiv.style.display = 'block';
 
                 submitBtn.textContent = 'Send Inquiry';
